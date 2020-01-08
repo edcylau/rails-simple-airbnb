@@ -1,0 +1,27 @@
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Simple Airbnb</span>
+  <form class="form-inline">
+    <a href="#" class="btn btn-primary">Add flat</a>
+  </form>
+</nav>
+<div class="container">
+  <h2 class="m-3">All our Flats(<%= @flats.count %>)</h2>
+  <div class="card-deck">
+    <% @flats.each do |flat| %>
+    <div class="card">
+     <div class="card-header h-100">
+      <h3><%= flat[:name] %></h3>
+      <%= flat[:address] %>
+     </div>
+     <div class="card-body">
+       <%= link_to "More Info", flat_path(flat.id) %>
+     </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
