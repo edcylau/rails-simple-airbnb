@@ -1,11 +1,12 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/d65afde9fc.js" crossorigin="anonymous"></script>
 </head>
 <nav class="navbar navbar-light bg-light">
   <span class="navbar-brand mb-0 h1">Simple Airbnb</span>
   <form class="form-inline">
-    <a href="#" class="btn btn-primary">Add flat</a>
+    <%= link_to "Add Flat", new_flat_path, class: 'btn btn-primary'%>
   </form>
 </nav>
 <div class="container">
@@ -15,7 +16,11 @@
     <div class="card">
      <div class="card-header h-100">
       <h3><%= flat[:name] %></h3>
-      <%= flat[:address] %>
+      <%= flat[:address] %>,
+      <%= flat[:city] %>
+      <div class="flex">
+        <i class="fas fa-users"></i>  <%= flat[:number_of_guests] %>
+      </div>
      </div>
      <div class="card-body">
        <%= link_to "More Info", flat_path(flat.id) %>
@@ -23,5 +28,4 @@
     </div>
     <% end %>
   </div>
-
 </div>

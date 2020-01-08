@@ -6,7 +6,6 @@ class FlatsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
